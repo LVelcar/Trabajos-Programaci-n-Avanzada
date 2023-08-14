@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Utiliza moveTo, lineTo y stroke para realizar la siguiente figura.</h1>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+</body>
+<script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#B6B3E5";
+    ctx.fillRect(0, 0, 100, 100);
+
+    ctx.fillStyle = "#D80E30";
+    ctx.fillRect(80, 80, 100, 100);
+
+    ctx.beginPath();
+
+    ctx.moveTo(400,120);
+    ctx.lineTo(250,120);
+    ctx.lineTo(250,120);
+    ctx.lineTo(400,10);
+    ctx.fill();
+    ctx.lineTo(400,200);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(300, 255, 50, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(420, 255, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+    
+
+
+</script>
+</html>
