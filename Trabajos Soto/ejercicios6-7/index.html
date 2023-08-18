@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color:darkgray;
+    }
+    canvas {
+        background-color: rgba(0, 0, 0, 0.322);
+    }
+</style>
+<body>
+    <canvas id="myCanvas" width="500" height="400"></canvas>
+    <img src="pintura.jpg" id="my_image">
+</body>
+<script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    //Sección para la creación de las letras Hola Mundo.
+    ctx.fillStyle = "red";
+    ctx.font = "40px Arial";
+    ctx.fillText("Hola Mundo", 200,50);
+
+    ctx.fillStyle = "white";
+    ctx.strokeText("Hola Mundo",200,45);
+
+    //Sección en donde se crea el efecto de degradado de 3 colores.
+    var grd = ctx.createLinearGradient(0,50,170,20);
+    grd.addColorStop(0,"blue");
+    grd.addColorStop(0.5,"white");
+    grd.addColorStop(1,"red");
+
+    ctx.fillStyle = grd;
+    ctx.fillRect(20,20,150,100);
+
+    //Sección para crear el degradado a partir del centro.
+    var grd2 = ctx.createRadialGradient(105, 150, 5, 90, 210, 100);
+    grd2.addColorStop(0.1,"red");
+    grd2.addColorStop(0.2,"white");
+    grd2.addColorStop(1,"black");
+
+    ctx.fillStyle = grd2;
+    ctx.fillRect(20,130,150,100);
+
+    //Sección para dibujar nuestra imagen.
+    var img = document.getElementById("my_image");
+    ctx.drawImage(img,50, 50);
+
+</script>
+</html>
