@@ -14,8 +14,9 @@
     }
 </style>
 <body>
-    <canvas id="myCanvas" width="500" height="400"></canvas>
-    <img src="pintura.jpg" id="my_image">
+    <canvas id="myCanvas" width="700" height="500"></canvas>
+    <img style="display: none;" src="pintura.jpg" id="my_image">
+    
 </body>
 <script>
     const canvas = document.getElementById("myCanvas");
@@ -48,8 +49,12 @@
     ctx.fillRect(20,130,150,100);
 
     //Sección para dibujar nuestra imagen.
-    var img = document.getElementById("my_image");
-    ctx.drawImage(img,50, 50);
-
+    //const img = document.getElementById("my_image");
+    img = new Image();
+        img.src = "pintura.jpg";
+        img.onload = function ()
+        {
+            ctx.drawImage(img, 20, 250, 200, 140);
+        }
 </script>
 </html>
