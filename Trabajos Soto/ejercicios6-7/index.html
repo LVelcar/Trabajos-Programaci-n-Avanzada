@@ -11,7 +11,7 @@
     }
     canvas {
         background-color: rgba(0, 0, 0, 0.322);
-        justify-content: center;
+        /* justify-content: center; */
     }
 
 </style>
@@ -23,15 +23,37 @@
 <script>
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
+    var figura = true;
 
-    canvas.addEventListener("click", (e) => {
-        console.log("Hola")
-        console.log(e)
-        ctx.beginPath();
-        ctx.arc(event.x, event.y, 50, 0, 2 * Math.PI);
-        ctx.fillStyle= "red";
-        ctx.fill();
-    })
+    function random_rgba() {
+        var o = Math.round, r = Math.random, s = 255;
+        return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    }
+
+    canvas.addEventListener("mousemove", (event) => {
+                switch(figura){
+                    case true:
+                        ctx.beginPath();
+                        ctx.arc(event.x, event.y, 50, 0, 2 * Math.PI);
+                        ctx.fillStyle = random_rgba();
+                        ctx.fill();
+                        figura = false;
+                        break;
+                    case false:
+                        ctx.beginPath();
+                        ctx.fillRect(event.x-50,event.y-50,100,100);
+                        ctx.fillStyle = random_rgba();
+                        ctx.fill();
+                        figura = true;
+                        break;
+                } 
+            })
+
+    
+
+
+
+    
 
     /*
     //Sección para la creación de las letras Hola Mundo.
