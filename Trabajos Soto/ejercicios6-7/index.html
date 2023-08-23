@@ -16,14 +16,51 @@
 
 </style>
 <body>
-    <canvas id="myCanvas" width="700" height="500"></canvas>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
     <img style="display: none;" src="pintura.jpg" id="my_image">
     
 </body>
 <script>
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
-    var figura = true;
+    var x = 225, y = 225;
+
+    function random_rgba() {
+        var o = Math.round, r = Math.random, s = 255;
+        return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    }
+
+    document.addEventListener("keydown", (e) => {
+        console.log(e.code)
+
+        switch(e.keyCode){
+            case 87:
+                y-=10;
+            break;
+            case 83:
+                y+=10;
+            break;
+            case 68:
+                x+=10;
+            break;
+            case 65:
+                x-=10;
+            break;
+        }
+
+        ctx.fillStyle = random_rgba();
+        repaint();
+    })
+
+    function repaint(){
+        //Pintar Canvas de blanco.
+        ctx.clearRect(0,0, canvas.width, canvas.height);
+        ctx.fillRect(x, y, 60, 60);
+        ctx.strokeRect(x, y, 60, 60);
+    }
+
+    
+    /* var figura = true;
     var press = false;
 
     function random_rgba() {
@@ -74,8 +111,9 @@
     canvas.addEventListener("mousedown", (e) => {
         press = true;
     });
+    */
 
-    
+//Nuevas actvidades
 
 
 
