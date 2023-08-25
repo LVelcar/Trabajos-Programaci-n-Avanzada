@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,52 +11,131 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        margin: 2px 0; /* Separación superior e inferior */
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-        flex-direction: column;
     }
 
     canvas {
         background-color: darkgray;
-        margin: 5px;
-        margin-top: 5px;
         border: 1px solid black;
     }
 
-    button {
-        padding: 10px 19px;
-        background-color: #000000;
-        border: none;
-        color: white;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.2s;
-        margin: 3px;
-    }
-
-    button:hover {
-        transform: scale(1.05);
-        background-color: #a8bdcc;
-    }
 </style>
 <body>
-    <canvas id="myCanvas" width="550" height="550"></canvas>
-    <div>
-        <button id="circuloBtn">Círculo</button>
-        <button id="rectanguloBtn">Rectángulo</button>
-        <button id="lineaBtn">Línea</button>
-        <button id="ovaloBtn">Ovalo</button>
-        <button id="cilindroBtn">Cilindro</button>
-        <button id="medioCirculoBtn">Mitad Círculo</button>
-    </div>
+    <canvas id="myCanvas" width="550" height="650"></canvas>
 
     <script>
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
 
+        //Parte Inferior Pantalón.
+        ctx.fillStyle = "#121940";
+        ctx.fillRect(205, 365, 155, 60);
+
+        //Pierna Derecha.
+        ctx.fillStyle = "#121940";
+        ctx.fillRect(205, 420, 60, 110);
+
+        //Pierna Izquierda.
+        ctx.fillStyle = "#121940";
+        ctx.fillRect(300, 420, 60, 110);
+
+        //Pie Izquierda.
+        ctx.beginPath();
+        ctx.fillStyle = "#544D1D";
+        ctx.roundRect(190, 530, 75, 40, [10, 0, 0, 10]);
+        ctx.fill();
+
+        //Pie Izquierda.
+        ctx.beginPath();
+        ctx.fillStyle = "#544D1D";
+        ctx.roundRect(300, 530, 75, 40, [0, 10, 10, 0]);
+        ctx.fill();
+
+        //Cuerpo.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.roundRect(193, 190, 180, 180, [18, 18, 3, 3]);
+        ctx.fill();
        
+        //Cuello.
+        ctx.fillStyle = "#FDEAAB";
+        ctx.fillRect(260, 150, 55, 40);
+
+        //Cabeza.
+        ctx.beginPath();
+        ctx.arc(285, 120, 60, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        //Hombro Izquierdo.
+        ctx.beginPath();
+        ctx.fillStyle = "FDEAAB";
+        ctx.roundRect(193, 230, 30, 170, [0, 0, 20, 20]);
+        ctx.fill();
+
+        //Hombro Derecho.
+        ctx.beginPath();
+        ctx.fillStyle = "FDEAAB";
+        ctx.roundRect(343, 230, 30, 170, [0, 0, 20, 20]);
+        ctx.fill();
+
+        //Ojo Derecho.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(261, 110, 10, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        //Ojo Izquierdo.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(310, 110, 10, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        //Nariz.
+        ctx.beginPath();
+        ctx.arc(285, 120, 8, 0, Math.PI, false);
+        ctx.stroke();
+        ctx.closePath();
+
+        //Boca.
+        ctx.beginPath();
+        ctx.arc(285, 140, 16, 0, Math.PI, false);
+        ctx.fill();
+        ctx.closePath();
+
+        //Lengua.
+        ctx.beginPath();
+        ctx.fillStyle = "#E84D7A"
+        ctx.arc(285, 150, 10, 0, Math.PI, false);
+        ctx.fill();
+        ctx.closePath();
         
+        //Parte Superior Sombrero.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(284, 82, 50, 0, Math.PI, true);
+        ctx.fill();
+        ctx.closePath();
+
+        //Parte Inferior Sombrero.
+        ctx.beginPath();
+        ctx.fillStyle = "#544D1D";
+        ctx.roundRect(215, 75, 140, 20, [10, 10, 10, 10]);
+        ctx.fill();
+
+        //Letras.
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "white";
+        ctx.fillText("TEAM", 254, 240);
+        
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop("0", "red");
+        gradient.addColorStop("0.8", "orange");
+        gradient.addColorStop("1.0", "yellow");
+        ctx.fillStyle = gradient;
+        ctx.fillText("INFIERNO", 235, 260);
+
     </script>
 </body>
 </html>
