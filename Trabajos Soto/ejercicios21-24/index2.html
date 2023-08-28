@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    canvas {
+        background-color: darkgray;
+        border: 1px solid black;
+    }
+
+</style>
+<body>    
+    <canvas id="myCanvas" width="750" height="650"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        //Amanecer.
+        const grd = ctx.createLinearGradient(0, 400, 0, 0);
+        grd.addColorStop(0, "#F76C12");
+        grd.addColorStop(1, "#50709E");
+
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, 750, 650);
+
+        // Montañas
+        ctx.fillStyle = "#5A3717";
+        ctx.beginPath();
+        ctx.moveTo(10, 650);
+        ctx.lineTo(340, 280);
+        ctx.lineTo(750, 650);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#855931";
+        ctx.beginPath();
+        ctx.moveTo(-140, 650);
+        ctx.lineTo(70, 280);
+        ctx.lineTo(330, 650);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#603C1B";
+        ctx.beginPath();
+        ctx.moveTo(2, 650);
+        ctx.lineTo(70, 280);
+        ctx.lineTo(330, 650);
+        ctx.closePath();
+        ctx.fill();
+        
+        ctx.fillStyle = "#603C1B";
+        ctx.beginPath();
+        ctx.moveTo(0, 650);
+        ctx.lineTo(180, 210);
+        ctx.lineTo(400, 650);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#855931";
+        ctx.beginPath();
+        ctx.moveTo(0, 650);
+        ctx.lineTo(180, 210);
+        ctx.lineTo(200, 650);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#855931";
+        ctx.beginPath();
+        ctx.moveTo(210, 650);
+        ctx.lineTo(500, 150);
+        ctx.lineTo(750, 650);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#603C1B";
+        ctx.beginPath();
+        ctx.moveTo(400, 650);
+        ctx.lineTo(500, 150);
+        ctx.lineTo(750, 650);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#855931";
+        ctx.beginPath();
+        ctx.moveTo(480, 650);
+        ctx.lineTo(665, 280);
+        ctx.lineTo(850, 650);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#603C1B";
+        ctx.beginPath();
+        ctx.moveTo(710, 650);
+        ctx.lineTo(665, 280);
+        ctx.lineTo(850, 650);
+        ctx.closePath();
+        ctx.fill();
+
+    </script>
+</body>
+</html>
