@@ -27,19 +27,30 @@
         const ctx = canvas.getContext("2d");
 
         //Amanecer.
-        const grd = ctx.createLinearGradient(0, 400, 0, 0);
+        const grd = ctx.createLinearGradient(0, 290, 0, 0);
         grd.addColorStop(0, "#F76C12");
         grd.addColorStop(1, "#50709E");
 
         ctx.fillStyle = grd;
         ctx.fillRect(0, 0, 750, 650);
 
+        //Sol.
+        const grd2 = ctx.createRadialGradient(400, 400, 300, 150, 160, 310);
+        grd2.addColorStop(0, "red");
+        grd2.addColorStop(1, "#FD820E");
+
+        ctx.fillStyle = grd2;
+        ctx.beginPath();
+        ctx.arc(420, 355, 200, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+        
         // Montañas
         ctx.fillStyle = "#5A3717";
         ctx.beginPath();
         ctx.moveTo(10, 650);
-        ctx.lineTo(340, 280);
-        ctx.lineTo(750, 650);
+        ctx.lineTo(310, 270);
+        ctx.lineTo(700, 610);
         ctx.closePath();
         ctx.fill();
 
@@ -107,6 +118,16 @@
         ctx.closePath();
         ctx.fill();
 
+        // Estrellas en la parte superior
+        ctx.fillStyle = "white";
+        for (let i = 0; i < 50; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * (canvas.height / 4.5); // Solo en la mitad superior
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath();
+        }
     </script>
 </body>
 </html>
