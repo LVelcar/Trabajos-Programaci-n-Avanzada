@@ -14,16 +14,49 @@
     }
 
     canvas {
-        background-color: darkgray;
+        background-color: rgb(94, 241, 222);
         border: 1px solid black;
     }
 </style>
 <body>
-    <canvas id="myCanvas" width="750" height="650"></canvas>
+    <canvas id="myCanvas" width="1400" height="700"></canvas>
 
     <script>
         const canvas = document.getElementById("myCanvas");
         const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(225, 45, 80, 80);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(300, 45, 80, 80);
+
+        ctx.fillStyle = "#DB8E46";
+        ctx.fillRect(230, 50, 70, 70);
+
+        ctx.fillStyle = "#DB8E46";
+        ctx.fillRect(305, 50, 70, 70);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(50, 300, 80, 80);
+
+        ctx.fillStyle = "#DB8E46";
+        ctx.fillRect(55, 305, 70, 70);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(1285, 140, 80, 80);
+
+        ctx.fillStyle = "#DB8E46";
+        ctx.fillRect(1290, 145, 70, 70);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 610, 1400, 70);
+
+        ctx.fillStyle = "#F9AEA2";
+        ctx.fillRect(0, 615, 1400, 90);
+
+        
+        
     </script>
     
 </body>

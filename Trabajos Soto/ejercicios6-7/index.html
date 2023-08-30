@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
         background-color:darkgray;
     }
     canvas {
-        background-color: rgba(0, 0, 0, 0.322);
+        background-color: white;
         /* justify-content: center; */
     }
 
@@ -23,9 +23,47 @@
 <script>
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
-    var x = 225, y = 225;
     //Definir una variable.
     var dir = 0;
+    var t_x, t_y;
+    var w_x = 100, w_y = 70;
+    var speed = 5;
+    let walls = [];
+    
+    class Rectangulo {
+        constructor(x, y, w, h, c){
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+            this.c = c;
+        }
+
+        paint(ctx){
+
+            ctx.fillStyle = this.c;
+            ctx.fillRect(this.x, this.y, this.w, this.h);
+            ctx.strokeRect(this.x, this.y, this.w, this.h);
+        }
+
+        seTocan(target){
+
+            if(this.x < target.x + target.w && 
+                this.x + this.w > target.x &&  
+                this.y < target.y + target.h &&   
+                this.y + this.h> target.y) 
+                {
+                    return true;
+                }
+            return false;
+        }
+    }
+
+    const player = new Rectangulo(255, 255, 50, 50, "black");
+    const target = new Rectangulo(320, 320, 40, 40, "black");
+    
+    walls.push(new Rectangulo(100, 70, 280, 30, "gray"));
+    walls.push(new Rectangulo(100, 420, 280, 30, "gray"));
 
     function random_rgba() {
         var o = Math.round, r = Math.random, s = 255;
@@ -33,8 +71,6 @@
     }
 
     document.addEventListener("keydown", (e) => {
-        console.log(e.code)
-
         switch(e.keyCode){
             case 87:
                 dir = e.keyCode
@@ -50,35 +86,79 @@
             break;
         }
 
-        ctx.fillStyle = random_rgba();
     })
 
     function update(){
         switch(dir){
             case 87:
-                y-=10;
+                player.y -=speed;
+                if( player.y <-50 ) { player.y = 550 }
             break;
             case 83:
-                y+=10;
+                player.y +=speed;
+                if( player.y > 550 ) { player.y = 0 }
             break;
             case 68:
-                x+=10;
+                player.x +=speed;
+                if( player.x > 550 ) { player.x = 0 }
             break;
             case 65:
-                x-=10;
+                player.x -=speed;
+                if( player.x <-50 ) { player.x = 550 }
             break;
         }
+
+        if( player.seTocan(target)) {
+            t_x = Math.random() * (460);
+            t_y = Math.random() * (460);
+            target.x = t_x;  // Update target's x position
+            target.y = t_y; 
+            speed += 1;   
+        }
+
+        for(var i = walls.length - 1; i >= 0; i--){
+            walls[i].paint(ctx);
+            if ( player.seTocan(walls[i])){
+                switch(dir)
+                {
+                    case 87:
+                        player.y +=speed;
+                    break;
+                    case 83:
+                        player.y -=speed;
+                    break;
+                    case 68:
+                        player.x -=speed;
+                    break;
+                    case 65:
+                        player.x +=speed;
+                    break;
+                }
+                dir = 0;
+            }
+        }
+            
         repaint();
         window.requestAnimationFrame(update);
     }
 
     function repaint(){
+        //changeTargetPosition();
         //Pintar Canvas de blanco.
         ctx.clearRect(0,0, canvas.width, canvas.height);
-        ctx.fillRect(x, y, 60, 60);
-        ctx.strokeRect(x, y, 60, 60);
+        
+        player.c = random_rgba();
+        player.paint(ctx);
+
+        //Pintar objeto.
+        target.paint(ctx);
+
+        for(var i = walls.length - 1; i >= 0; i--){
+            walls[i].paint(ctx);
+        }
     }
 
+  
     window.requestAnimationFrame = (function () {
         return window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
