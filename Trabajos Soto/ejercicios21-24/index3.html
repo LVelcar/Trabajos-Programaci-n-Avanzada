@@ -15,7 +15,7 @@
 
     canvas {
         background-color: rgb(94, 241, 222);
-        border: 1px solid black;
+        border: 1px solid rgba(0, 0, 0, 0.644);
     }
 </style>
 <body>
@@ -50,11 +50,122 @@
         ctx.fillRect(1290, 145, 70, 70);
 
         ctx.fillStyle = "black";
-        ctx.fillRect(0, 610, 1400, 70);
+        ctx.fillRect(0, 610, 1400, 170);
 
+        ctx.beginPath();
         ctx.fillStyle = "#F9AEA2";
-        ctx.fillRect(0, 615, 1400, 90);
+        ctx.roundRect(0, 615, 1400, 90, [0, 0, 30, 30]);
+        ctx.fill();
+        ctx.closePath();
 
+        // Cuadro azul.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.roundRect(460, 215, 250,395, [10, 10, 10, 10]);
+        ctx.roundRect(560, 265, 200,350, [10, 5, 0, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = " #18A2E8 ";
+        ctx.roundRect(465, 218, 245, 392, [10, 10, 10, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = " #69C7F6 ";
+        ctx.roundRect(465, 218, 236, 388, [10, 10, 10, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        //Cuadrado rosa.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.roundRect(300, 375, 235,240, [10, 10, 10, 10]);
+        ctx.roundRect(390, 420, 190, 190, [10, 5, 0, 0]);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = " #FA8370 ";
+        ctx.roundRect(305, 380, 230, 230, [10, 10, 10, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = " #FBAB9F ";
+        ctx.roundRect(305, 380, 220, 224, [10, 10, 10, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        //Cuadrado verde.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.roundRect(1180, 375, 235,240, [10, 10, 10, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = " #189D43 ";
+        ctx.roundRect(1185, 380, 230, 230, [10, 10, 10, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = " #1CD758 ";
+        ctx.roundRect(1185, 380, 220, 224, [10, 10, 10, 10]);
+        ctx.fill();
+        ctx.closePath();
+
+        //Tobogán.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.fillRect(920, 375, 175, 85);
+        ctx.fillRect(928, 395, 160, 220);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#0DB711";
+        ctx.fillRect(927, 381, 160, 72);
+        ctx.fillRect(935, 465, 145, 140);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#40FE39";
+        ctx.fillRect(940, 381, 6, 72);
+        ctx.fillRect(940, 465, 6, 140);
+        ctx.fillRect(952, 381, 16, 72);
+        ctx.fillRect(952, 465, 16, 140);
+        ctx.fillRect(985, 381, 6, 72);
+        ctx.fillRect(985, 465, 6, 140);
+        ctx.fillRect(1025, 381, 8, 72);
+        ctx.fillRect(1025, 465, 8, 140);
+        ctx.fillRect(1040, 381, 6, 72);
+        ctx.fillRect(1040, 465, 6, 140);
+        ctx.fillRect(1050, 381, 6, 72);
+        ctx.fillRect(1050, 465, 6, 140);
+        ctx.fillRect(1075, 381, 6, 72);
+        ctx.fillRect(1068, 465, 6, 140);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(23, 24, 23, 0.1)";
+        ctx.fillRect(930, 383, 166, 72);
+        ctx.fillRect(938, 468, 145, 140);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "rgba(0, 0, 0, 0.644)";
+        ctx.fillRect(1037, 381, 21, 72);
+        ctx.fillRect(1037, 465, 21, 140);
+        ctx.fillRect(1064, 381, 23, 72);
+        ctx.fillRect(1060, 465, 21, 140);
+        ctx.fill();
+        ctx.closePath();
         
         
     </script>
