@@ -14,12 +14,14 @@
     }
 
     canvas {
-        background-color: rgb(94, 241, 222);
+        background-color: rgb(149, 252, 238);
         border: 1px solid rgba(0, 0, 0, 0.644);
     }
 </style>
 <body>
     <canvas id="myCanvas" width="1400" height="700"></canvas>
+    <img style="display: none;" src="mario.png" id="my_image">
+    <img style="display: none;" src="planta.png" id="my_image2">
 
     <script>
         const canvas = document.getElementById("myCanvas");
@@ -53,7 +55,7 @@
         ctx.fillRect(0, 610, 1400, 170);
 
         ctx.beginPath();
-        ctx.fillStyle = "#F9AEA2";
+        ctx.fillStyle = "#F2C485";
         ctx.roundRect(0, 615, 1400, 90, [0, 0, 30, 30]);
         ctx.fill();
         ctx.closePath();
@@ -133,7 +135,7 @@
         ctx.closePath();
 
         ctx.beginPath();
-        ctx.fillStyle = "#40FE39";
+        ctx.fillStyle = "#10FF3A";
         ctx.fillRect(940, 381, 6, 72);
         ctx.fillRect(940, 465, 6, 140);
         ctx.fillRect(952, 381, 16, 72);
@@ -166,9 +168,193 @@
         ctx.fillRect(1060, 465, 21, 140);
         ctx.fill();
         ctx.closePath();
+
+        //Círculos.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(240, 60, 5, 0, 2 * Math.PI);
+        ctx.arc(240, 108, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
         
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(290, 60, 5, 0, 2 * Math.PI);
+        ctx.arc(290, 108, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(315, 60, 5, 0, 2 * Math.PI);
+        ctx.arc(315, 108, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(362, 60, 5, 0, 2 * Math.PI);
+        ctx.arc(362, 108, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(67, 316, 5, 0, 2 * Math.PI);
+        ctx.arc(67, 363, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(112, 316, 5, 0, 2 * Math.PI);
+        ctx.arc(112, 363, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(1300, 156, 5, 0, 2 * Math.PI);
+        ctx.arc(1300, 205, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(1350, 156, 5, 0, 2 * Math.PI);
+        ctx.arc(1350, 205, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        //Círculos de cuadro rosa.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(333, 403, 16, 0, 2 * Math.PI);
+        ctx.arc(333, 591, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(510, 403, 16, 0, 2 * Math.PI);
+        ctx.arc(510, 591, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#CFD2D2";
+        ctx.arc(332, 402, 13, 0, 2 * Math.PI);
+        ctx.arc(332, 590, 13, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#CFD2D2";
+        ctx.arc(509, 402, 13, 0, 2 * Math.PI);
+        ctx.arc(509, 590, 13, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
         
-    </script>
+        //Círculo cuadro azul.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(490, 242, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(687, 242, 16, 0, 2 * Math.PI);
+        ctx.arc(687, 591, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#CFD2D2";
+        ctx.arc(489, 241, 13, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#CFD2D2";
+        ctx.arc(686, 241, 13, 0, 2 * Math.PI);
+        ctx.arc(686, 590, 13, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        //Círculos cuadro verde.
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.arc(1210, 403, 16, 0, 2 * Math.PI);
+        ctx.arc(1210, 591, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#CFD2D2";
+        ctx.arc(1209, 402, 13, 0, 2 * Math.PI);
+        ctx.arc(1209, 590, 13, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        const img = document.getElementById("my_image");
+        img.src = "mario.png";
+        img.onload = function ()
+        {
+            ctx.drawImage(img, 665, 470, 120, 140);
+        }
+
+        const img2 = document.getElementById("my_image2");
+        img2.src = "planta.png";
+        img2.onload = function ()
+        {
+            ctx.drawImage(img2, 945, 246, 120, 140);
+        }
+
+        // Función para dibujar cuadrados pequeños color café en una línea diagonal
+        function drawDiagonalSquares(ctx, x, y, size, numSquares, color) {
+        for (let i = 0; i < numSquares; i++) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x + i * size, y + i * size, size, size);
+        }
+        }
+
+        // Llamar a la función para dibujar las líneas diagonales de cuadrados café
+        drawDiagonalSquares(ctx, -50, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 0, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 50, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 100, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 150, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 200, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 250, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 300, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 350, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 400, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 450, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 500, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 550, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 600, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 650, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 700, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 750, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 800, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 850, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 900, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 950, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1000, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1050, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1100, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1150, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1200, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1250, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1300, canvas.height - 85, 20, 10, "#8B4513");
+        drawDiagonalSquares(ctx, 1350, canvas.height - 85, 20, 10, "#8B4513");
     
+        ctx.fillStyle = "#8C6941";
+        ctx.fillRect(0, 614, 1400, 42);
+
+        ctx.fillStyle = "#FEBEAE";
+        ctx.fillRect(0, 614, 1400, 32);
+    </script>
 </body>
 </html>
