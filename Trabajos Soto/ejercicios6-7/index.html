@@ -29,6 +29,8 @@
     var w_x = 100, w_y = 70;
     var speed = 5;
     let walls = [];
+    var pause = false;
+    var score = 0;
     
     class Rectangulo {
         constructor(x, y, w, h, c){
@@ -73,39 +75,44 @@
     document.addEventListener("keydown", (e) => {
         switch(e.keyCode){
             case 87:
-                dir = e.keyCode
+                if(!pause) dir = e.keyCode
             break;
             case 83:
-                dir = e.keyCode
+                if(!pause) dir = e.keyCode
             break;
             case 68:
-                dir = e.keyCode
+                if(!pause) dir = e.keyCode
             break;
             case 65:
-                dir = e.keyCode
+                if(!pause) dir = e.keyCode
+            break;
+            case 32:
+                pause = !pause;
             break;
         }
 
     })
 
     function update(){
-        switch(dir){
-            case 87:
-                player.y -=speed;
-                if( player.y <-50 ) { player.y = 550 }
-            break;
-            case 83:
-                player.y +=speed;
-                if( player.y > 550 ) { player.y = 0 }
-            break;
-            case 68:
-                player.x +=speed;
-                if( player.x > 550 ) { player.x = 0 }
-            break;
-            case 65:
-                player.x -=speed;
-                if( player.x <-50 ) { player.x = 550 }
-            break;
+        if(!pause){
+            switch(dir){
+                case 87:
+                    player.y -=speed;
+                    if( player.y <-50 ) { player.y = 550 }
+                break;
+                case 83:
+                    player.y +=speed;
+                    if( player.y > 550 ) { player.y = 0 }
+                break;
+                case 68:
+                    player.x +=speed;
+                    if( player.x > 550 ) { player.x = 0 }
+                break;
+                case 65:
+                    player.x -=speed;
+                    if( player.x <-50 ) { player.x = 550 }
+                break;
+            }
         }
 
         if( player.seTocan(target)) {
@@ -113,7 +120,8 @@
             t_y = Math.random() * (460);
             target.x = t_x;  // Update target's x position
             target.y = t_y; 
-            speed += 1;   
+            speed += 1;  
+            score += 10; 
         }
 
         for(var i = walls.length - 1; i >= 0; i--){
@@ -145,16 +153,28 @@
     function repaint(){
         //changeTargetPosition();
         //Pintar Canvas de blanco.
-        ctx.clearRect(0,0, canvas.width, canvas.height);
-        
-        player.c = random_rgba();
-        player.paint(ctx);
+        if(!pause){
+            ctx.clearRect(0,0, canvas.width, canvas.height);
 
-        //Pintar objeto.
-        target.paint(ctx);
+            ctx.font = "30px Verdana";
+            ctx.fillStyle = "black";
+            ctx.fillText("SCORE:" + score, 10, 30);
+            
+            player.c = random_rgba();
+            player.paint(ctx);
 
-        for(var i = walls.length - 1; i >= 0; i--){
-            walls[i].paint(ctx);
+            //Pintar objeto.
+            target.paint(ctx);
+
+            for(var i = walls.length - 1; i >= 0; i--){
+                walls[i].paint(ctx);
+            }
+        } else {
+            ctx.fillStyle = "rgba(154, 160, 154, 0.9)";
+            ctx.fillRect(0, 0, 500, 500);
+
+            ctx.fillStyle = "black";
+            ctx.fillText("P A U S E", 230, 230)
         }
     }
 
