@@ -17,7 +17,7 @@
 </style>
 <body>
     <canvas id="myCanvas" width="550" height="550"></canvas>
-    <img style="display: none;" src="pintura.jpg" id="my_image">
+    <img style="display: none;" src="pacman.png" id="my_image">
     
 </body>
 <script>
@@ -31,6 +31,14 @@
     let walls = [];
     var pause = false;
     var score = 0;
+    let image = new Image();
+    image.src = "pacman.png";
+
+    let image2 = new Image();
+    image2.src = "fantasma.png";
+
+    let audio = new Audio();
+    audio.src = "pacman-waka-waka.mp3";
     
     class Rectangulo {
         constructor(x, y, w, h, c){
@@ -122,6 +130,7 @@
             target.y = t_y; 
             speed += 1;  
             score += 10; 
+            audio.play();
         }
 
         for(var i = walls.length - 1; i >= 0; i--){
@@ -151,7 +160,6 @@
     }
 
     function repaint(){
-        //changeTargetPosition();
         //Pintar Canvas de blanco.
         if(!pause){
             ctx.clearRect(0,0, canvas.width, canvas.height);
@@ -161,10 +169,12 @@
             ctx.fillText("SCORE:" + score, 10, 30);
             
             player.c = random_rgba();
-            player.paint(ctx);
+            //player.paint(ctx);
+            ctx.drawImage(image, player.x, player.y, 80, 80);
 
             //Pintar objeto.
-            target.paint(ctx);
+            //target.paint(ctx);
+            ctx.drawImage(image2, target.x, target.y, 70,70);
 
             for(var i = walls.length - 1; i >= 0; i--){
                 walls[i].paint(ctx);
