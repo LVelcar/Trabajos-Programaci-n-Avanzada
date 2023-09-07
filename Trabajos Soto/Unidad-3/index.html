@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>App Vue</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family:Arial, Helvetica, sans-serif;
+        
+    }
+    button {
+        padding: 10px 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        background-color: aquamarine;
+    }
+
+    input {
+        padding: 8px 15px;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+
+    #app {
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
+        background-color: rgb(177, 152, 236);
+    }
+    .highlight {
+        background-color: yellow; 
+        color: black; 
+    }
+</style>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <button @click="count++" :class="{ 'highlight': count % 2 === 0 }">{{ count }}</button>
+        <h1>Hola {{nombre}}</h1>
+        <input type="text" v-model="nombre" placeholder="Escribe tu nombre">
+        <h1>Suma Dos Números</h1>
+        <input type="text" v-model="num1" placeholder="Ingresa el primer número">
+        <input type="text" v-model="num2" placeholder="Ingresa el segundo número">
+        <button @click="sumar">Suma</button>
+        <h1>Resultado {{resultado}}</h1>
+    </div>
+
+    <script>
+    const { createApp, ref } = Vue
+
+    createApp({
+        data() {
+            return {
+                count: 0,
+                nombre: '',
+                num1: '',
+                num2: '',
+                resultado: '',
+            }
+        }, 
+        methods: {
+            sumar (){
+                const numero1 = parseFloat(this.num1);
+                const numero2 = parseFloat(this.num2);
+                this.resultado = isNaN(numero1) || isNaN(numero2) ? 'Error' : numero1 + numero2;
+
+                this.num1 = '';
+                this.num2 = '';
+            }
+        }
+    }).mount('#app')
+    </script>
+    
+</body>
+</html>
