@@ -54,6 +54,29 @@
         <input type="text" v-model="num2" placeholder="Ingresa el segundo número">
         <button @click="sumar">Suma</button>
         <h1>Resultado {{resultado}}</h1>
+        <hr>
+        <ul>
+            <li v-for="item in person" >
+                {{item.name}} - {{item.lasttName}}
+            </li>
+        </ul>
+        <form>
+            <fieldset>
+                <legend>
+                    Nombre(s)
+                </legend>
+                <input type="text" v-model="name">
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Apellido(s)
+                </legend>
+                <input type="text" v-model="lasttName">
+            </fieldset>
+            <button type="button" v-on:click="addPerson()">
+                Save Data
+            </button>
+        </form>
     </div>
 
     <script>
@@ -67,6 +90,9 @@
                 num1: '',
                 num2: '',
                 resultado: '',
+                name: '',
+                lasttName: '',
+                person: []
             }
         }, 
         methods: {
@@ -77,6 +103,17 @@
 
                 this.num1 = '';
                 this.num2 = '';
+            },
+            addPerson () {
+                const person = {
+                    name: this.name,
+                    lasttName: this.lasttName
+                }
+
+                this.person.push(person);
+
+                console.log(this.name);
+                console.log(this.lasttName);
             }
         }
     }).mount('#app')
