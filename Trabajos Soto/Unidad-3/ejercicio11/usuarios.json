@@ -1,18 +1,218 @@
 [
     {
-        "name":"Luis",
-        "lastname": "Velcar",
-        "email": "luisvelcar9@gmail.com",
-        "password": "lucho1",
-        "role_id":1,
-        "avatar":""
+        "id": 1,
+        "name": "Luis Velcar",
+        "username": "LVelcar",
+        "email": "luisvelcar@gmail.com",
+        "password": "12345",
+        "address": {
+            "street": "La Fuente",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "6121008001",
+        "website": "velcar.com",
+        "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
     },
     {
-        "name":"Juan",
-        "lastname": "Caballero",
-        "email": "juanitoC1@gmail.com",
-        "password": "12345",
-        "role_id":1,
-        "avatar":""
+        "id": 2,
+        "name": "Jennifer Smith",
+        "username": "Jenny123",
+        "email": "jennifer@example.com",
+        "password": "securePassword",
+        "address": {
+            "street": "123 Main Street",
+            "suite": "Apt. 456",
+            "city": "Springfield",
+            "zipcode": "12345",
+            "geo": {
+                "lat": "40.7128",
+                "lng": "-74.0060"
+            }
+        },
+        "phone": "(555) 555-1234",
+        "website": "jennysmith.com",
+        "company": {
+            "name": "Smith Enterprises",
+            "catchPhrase": "Innovate for the future",
+            "bs": "deliver cutting-edge solutions"
+        }
+    },
+    {
+        "id": 3,
+        "name": "John Doe",
+        "username": "johndoe",
+        "email": "john@example.com",
+        "password": "strongPassword",
+        "address": {
+            "street": "789 Elm Street",
+            "suite": "Suite 789",
+            "city": "Oakville",
+            "zipcode": "54321",
+            "geo": {
+                "lat": "42.3601",
+                "lng": "-71.0589"
+            }
+        },
+        "phone": "(555) 555-5678",
+        "website": "johndoe.io",
+        "company": {
+            "name": "Doe Corporation",
+            "catchPhrase": "Empowering businesses worldwide",
+            "bs": "optimize global operations"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Alice Johnson",
+        "username": "alicej",
+        "email": "alice@example.com",
+        "password": "securePass123",
+        "address": {
+            "street": "456 Oak Avenue",
+            "suite": "Apt. 123",
+            "city": "Maplewood",
+            "zipcode": "67890",
+            "geo": {
+                "lat": "41.8781",
+                "lng": "-87.6298"
+            }
+        },
+        "phone": "(555) 555-2345",
+        "website": "alicejohnson.net",
+        "company": {
+            "name": "Johnson Solutions",
+            "catchPhrase": "Innovate and inspire",
+            "bs": "drive positive change"
+        }
+    },
+    {
+        "id": 5,
+        "name": "David Brown",
+        "username": "davidb",
+        "email": "david@example.com",
+        "password": "strongPass789",
+        "address": {
+            "street": "789 Pine Street",
+            "suite": "Suite 345",
+            "city": "Cedarville",
+            "zipcode": "54321",
+            "geo": {
+                "lat": "37.7749",
+                "lng": "-122.4194"
+            }
+        },
+        "phone": "(555) 555-7890",
+        "website": "davidbrown.io",
+        "company": {
+            "name": "Brown Technologies",
+            "catchPhrase": "Leading the way in tech",
+            "bs": "deliver innovative solutions"
+        }
+    },
+    {
+        "id": 6,
+        "name": "Emma Wilson",
+        "username": "emmaw",
+        "email": "emma@example.com",
+        "password": "safePassword123",
+        "address": {
+            "street": "101 Elm Street",
+            "suite": "Apt. 567",
+            "city": "Willowville",
+            "zipcode": "12345",
+            "geo": {
+                "lat": "34.0522",
+                "lng": "-118.2437"
+            }
+        },
+        "phone": "(555) 555-5678",
+        "website": "emmawilson.net",
+        "company": {
+            "name": "Wilson Innovations",
+            "catchPhrase": "Creating a brighter future",
+            "bs": "pioneer groundbreaking solutions"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Michael Anderson",
+        "username": "michaela",
+        "email": "michael@example.com",
+        "password": "myPass123",
+        "address": {
+            "street": "222 Oak Lane",
+            "suite": "Apt. 890",
+            "city": "Mapleton",
+            "zipcode": "67890",
+            "geo": {
+                "lat": "40.7128",
+                "lng": "-74.0060"
+            }
+        },
+        "phone": "(555) 555-6789",
+        "website": "michaelanderson.io",
+        "company": {
+            "name": "Anderson Solutions",
+            "catchPhrase": "Innovation at its best",
+            "bs": "drive progress through technology"
+        }
+    },
+    {
+        "id": 8,
+        "name": "Olivia Clark",
+        "username": "oliviac",
+        "email": "olivia@example.com",
+        "password": "securePass789",
+        "address": {
+            "street": "567 Pine Avenue",
+            "suite": "Suite 123",
+            "city": "Pineville",
+            "zipcode": "54321",
+            "geo": {
+                "lat": "37.7749",
+                "lng": "-122.4194"
+            }
+        },
+        "phone": "(555) 555-1234",
+        "website": "oliviaclark.net",
+        "company": {
+            "name": "Clark Technologies",
+            "catchPhrase": "Innovating for a better tomorrow",
+            "bs": "transform industries with technology"
+        }
+    },
+    {
+        "id": 9,
+        "name": "William Baker",
+        "username": "williamb",
+        "email": "william@example.com",
+        "password": "safePassword789",
+        "address": {
+            "street": "789 Maple Road",
+            "suite": "Apt. 456",
+            "city": "Mapletown",
+            "zipcode": "12345",
+            "geo": {
+                "lat": "34.0522",
+                "lng": "-118.2437"
+            }
+        },
+        "phone": "(555) 555-2345",
+        "website": "williambaker.io",
+        "company": {
+            "name": "Baker Innovations",
+            "catchPhrase": "Empowering businesses through innovation",
+            "bs": "drive growth and success"
+        }
     }
 ]
