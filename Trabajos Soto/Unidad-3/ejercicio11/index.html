@@ -70,6 +70,21 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +112,7 @@
             data() {
                 return {
                   email: '',
-                  contrasena: ''
+                  contrasena: '',
                 };
             }, 
             methods: {
@@ -109,6 +124,7 @@
                         user.email === this.email && user.password === this.contrasena);
                         if (usuarioEncontrado) {
                             alert("Inicio de Sesión exitoso");
+                            window.location.href = 'table.html';
                         } else {
                             alert('Usuario o contraseña incorrectos');
                         }
