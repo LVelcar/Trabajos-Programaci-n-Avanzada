@@ -1,0 +1,48 @@
+/* .prueba(@bg:red) {
+    background-color: @bg;
+} */
+body {
+  background-color: #ffffff;
+}
+body .container {
+  width: 70%;
+  margin: auto;
+}
+body .container form {
+  background-color: #ac5bf7;
+  box-shadow: 10px 10px 25px 3px rgba(46, 42, 42, 0.61);
+  border-radius: 2rem;
+  padding: 20px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+body .container form legend {
+  color: #3DF13A;
+  font-weight: bold;
+  font-size: 2rem;
+  /* .prueba(); */
+}
+body .container form fieldset ul li .item-1 {
+  background-color: #0275d8;
+  border-style: dotted;
+  border-width: 1px;
+}
+body .container form fieldset ul li .item-2 {
+  background-color: #5cb85c;
+  border-style: dotted;
+  border-width: 1px;
+}
+body .container form fieldset ul li .item-3 {
+  background-color: #5bc0de;
+  border-style: dotted;
+  border-width: 1px;
+}
+body .container form fieldset ul li .item-4 {
+  background-color: #f0ad4e;
+  border-style: dotted;
+  border-width: 1px;
+}
+body .container form fieldset ul li .item-5 {
+  background-color: #d9534f;
+  border-style: dotted;
+  border-width: 1px;
+}

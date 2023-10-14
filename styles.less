@@ -1,0 +1,48 @@
+@mainColor: rgb(172, 91, 247);
+@textColor: #3DF13A;
+@fontFamily: Verdana, Geneva, sans-serif; 
+@colores: #0275d8, #5cb85c, #5bc0de, #f0ad4e, #d9534f; 
+
+/* .prueba(@bg:red) {
+    background-color: @bg;
+} */
+
+.colores-lista(@items; @i: 1) when (@i =< @items) { 
+    .item-@{i} {
+        background-color: extract(@colores, @i);
+        border-style: dotted;
+        border-width: 1px;
+    }
+    .colores-lista(@items; (@i + 1));
+}
+body {
+    background-color: rgb(255, 255, 255);
+
+    .container {
+        width: 70%;
+        margin: auto;
+
+        form {
+            background-color: @mainColor;
+            box-shadow: 10px 10px 25px 3px rgba(46, 42, 42, 0.61);
+            border-radius: 2rem;
+            padding: 20px;
+            font-family: @fontFamily;
+
+            legend {
+                color: @textColor;
+                font-weight: bold;
+                font-size: 2rem;
+                /* .prueba(); */
+            }
+            
+            fieldset {
+                ul {
+                    li {
+                        .colores-lista(5);
+                    }
+                }
+            }
+        }
+    }
+}
