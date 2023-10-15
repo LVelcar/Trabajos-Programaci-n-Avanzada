@@ -1,20 +1,17 @@
 @mainColor: rgb(172, 91, 247);
 @textColor: #3DF13A;
-@fontFamily: Verdana, Geneva, sans-serif; 
-@colores: #0275d8, #5cb85c, #5bc0de, #f0ad4e, #d9534f; 
+@fontFamily: Verdana, Geneva, sans-serif;
+@colores: #0275d8, #5cb85c, #5bc0de, #f0ad4e, #d9534f;
 
-/* .prueba(@bg:red) {
-    background-color: @bg;
-} */
-
-.colores-lista(@items; @i: 1) when (@i =< @items) { 
+.colorear-lista(@items; @i: 1) when (@i =< @items) {
     .item-@{i} {
         background-color: extract(@colores, @i);
         border-style: dotted;
         border-width: 1px;
     }
-    .colores-lista(@items; (@i + 1));
+    .colorear-lista(@items, (@i + 1));
 }
+
 body {
     background-color: rgb(255, 255, 255);
 
@@ -33,14 +30,11 @@ body {
                 color: @textColor;
                 font-weight: bold;
                 font-size: 2rem;
-                /* .prueba(); */
             }
-            
+
             fieldset {
                 ul {
-                    li {
-                        .colores-lista(5);
-                    }
+                    .colorear-lista(5);
                 }
             }
         }
