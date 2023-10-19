@@ -128,6 +128,7 @@
                     <!--CONTENIDO-->
                     <div class="container p-4">
                         <div class="row mx-auto">
+                        <?php for ($i = 0; $i < 14; ++$i): ?>
                         <div class="card col-3 mb-3">
                             <img src="https://ui-avatars.com/api/?size=200" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -136,6 +137,7 @@
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
+                        <?php endfor; ?>
                         <div class="card col-3 mb-3">
                             <img src="https://ui-avatars.com/api/?size=200" class="card-img-top" alt="...">
                             <div class="card-body">
