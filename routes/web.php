@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VisitorController;
+use App\Http\Controllers\CarroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,7 @@ Route::get('/visitante/{firstName}', function (string $firstName) {
 })->whereAlpha('firstName');
 
 Route::get('/hello/{firstName}', [VisitorController::class, 'index'])->whereAlpha('firstName');
+
+Route::get('/carros', [CarroController::class, 'getAllCarros']);
+Route::get('/carros/{id}', [CarroController::class, 'getCarroById']);
 
